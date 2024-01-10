@@ -1,0 +1,22 @@
+import calendar
+
+def display_calendar(year, month):
+    # Generate a calendar for the specified month and year
+    cal = calendar.monthcalendar(year, month)
+
+    # Print the header
+    print(f"Calendar for {calendar.month_name[month]} {year}")
+    print("Mo Tu We Th Fr Sa Su")
+
+    # Print each week
+    for week in cal:
+        for day in week:
+            if day == 0:
+                print("   ", end="")  # Print empty space for days outside the month
+            else:
+                print(f"{day:2d} ", end="")
+        print()  # Move to the next line after each week
+
+# Example usage: Display the calendar for January 2024
+display_calendar(2024, 1)
+
